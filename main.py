@@ -13,7 +13,8 @@ app.add_middleware(
     allow_methods = ["POST", "GET"],
     allow_headers = ["*"],
 )
-client = Groq()
+api_key = os.getenv("GROQ_API_KEY")
+client = Groq(api_key = api_key)
 MODE_INSTRUCTIONS: dict[str, str] = {
     "standard": "Fix all grammar, spelling, punctuation, and contextual errors. Preserve the author's original voice.",
     "formal":   "Fix all errors AND elevate the tone to be professional and formal. Remove contractions and use precise vocabulary.",
