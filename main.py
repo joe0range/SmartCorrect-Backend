@@ -102,4 +102,3 @@ def correct_text(req: CorrectRequest):
         score = int(data.get("score", 80)),
         corrections = corrections,
     )
-app.mount("/", StaticFiles(directory = "../frontend", html = True), name = "static")
