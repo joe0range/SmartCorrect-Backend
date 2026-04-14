@@ -9,7 +9,7 @@ from groq import Groq, APIStatusError, APIConnectionError
 app = FastAPI(title = "SmartCorrect API", version = "1.0.0")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins = ["*"],
+    allow_origins = ["https://smartcorrect-frontend.vercel.app", "http://localhost:3000"],
     allow_methods = ["POST", "GET"],
     allow_headers = ["*"],
 )
